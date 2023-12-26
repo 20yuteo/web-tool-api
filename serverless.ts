@@ -1,5 +1,5 @@
 import type { AWS } from '@serverless/typescript';
-import hello from '@functions/hello';
+import main from '@functions/main';
 
 const serverlessConfiguration: AWS = {
   service: 'web-tool-api',
@@ -18,7 +18,7 @@ const serverlessConfiguration: AWS = {
     },
   },
   // import the function via paths
-  functions: { hello },
+  functions: { main },
   package: { individually: true },
   custom: {
     esbuild: {

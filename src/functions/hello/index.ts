@@ -6,8 +6,21 @@ export default {
   events: [
     {
       http: {
-        method: 'post',
-        path: 'hello',
+        method: 'ANY',
+        cors: {
+          origin: "*",
+          headers: [
+            "Content-Type",
+            "X-Amz-Date",
+            "Authorization",
+            "X-Api-Key",
+            "X-Amz-Security-Token",
+            "X-Amz-User-Agent",
+            "X-Client-Version",
+            "X-Client-Path"
+          ]
+        },
+        path: '/{proxy+}',
         request: {
           schemas: {
             'application/json': schema,

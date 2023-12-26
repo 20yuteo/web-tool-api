@@ -1,14 +1,11 @@
-import type { ValidatedEventAPIGatewayProxyEvent } from '@libs/api-gateway';
-import { formatJSONResponse } from '@libs/api-gateway';
-import { middyfy } from '@libs/lambda';
+import express from 'express';
+const serverless = require('serverless-http');
 
-import schema from './schema';
+const app = express();
+app.use(express.json());
 
-const hello: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (event) => {
-  return formatJSONResponse({
-    message: `Hello ${event.body.name}, welcome to the exciting Serverless world!`,
-    event,
-  });
-};
+app.get('/hello', (_req, res) => {
+  res.json({ message: 'Hello World' });
+});
 
-export const main = middyfy(hello);
+export const main = serverless(app)

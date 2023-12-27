@@ -1,11 +1,11 @@
 import express from 'express';
-const serverless = require('serverless-http');
+import serverless from 'serverless-http';
+import router from '@/routes';
+import { jsonParser } from '@/middleware/jsonParser';
 
 const app = express();
 app.use(express.json());
-
-app.get('/hello', (_req, res) => {
-  res.json({ message: 'Hello World' });
-});
+app.use(jsonParser)
+app.use(router)
 
 export const main = serverless(app)

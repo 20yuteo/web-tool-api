@@ -1,5 +1,5 @@
+import main from '@/functions/main';
 import type { AWS } from '@serverless/typescript';
-import main from '@functions/main';
 
 const serverlessConfiguration: AWS = {
   service: 'web-tool-api',

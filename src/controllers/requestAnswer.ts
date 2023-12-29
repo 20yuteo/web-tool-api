@@ -8,11 +8,11 @@ type RequestAnswerBody = {
 
 export const requestAnswerSchema: JSONSchema7 = {
   type: "object",
-  additionalProperties: false,
   properties: {
-    answer: { type: "string" }
+    answer: { type: "string", title: "answer" }
   },
-  required: ["answer"]
+  required: ["answer"],
+  additionalProperties: false
 };
 
 interface RequestAnswerRequest extends RequestBase<null, RequestAnswerBody, null> {

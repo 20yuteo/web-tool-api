@@ -1,5 +1,4 @@
 import { handlerPath } from '@/libs/handler-resolver';
-// import schema from './schema';
 
 export default {
   handler: `${handlerPath(__dirname)}/handler.main`,
@@ -17,7 +16,9 @@ export default {
             "X-Amz-Security-Token",
             "X-Amz-User-Agent",
             "X-Client-Version",
-            "X-Client-Path"
+            "X-Client-Path",
+            "Access-Control-Allow-Origin",
+            "Access-Control-Allow-Headers"
           ]
         },
         path: '/{proxy+}'

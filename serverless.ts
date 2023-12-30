@@ -4,7 +4,7 @@ import type { AWS } from '@serverless/typescript';
 const serverlessConfiguration: AWS = {
   service: 'web-tool-api',
   frameworkVersion: '3',
-  plugins: ['serverless-esbuild', 'serverless-offline', 'serverless-api-gateway-caching'],
+  plugins: ['serverless-esbuild', 'serverless-offline', 'serverless-api-gateway-caching', 'serverless-domain-manager'],
   provider: {
     name: 'aws',
     runtime: 'nodejs14.x',
@@ -36,7 +36,15 @@ const serverlessConfiguration: AWS = {
       enabled: true,
       ttlInSeconds: 0,
       perKeyFlush: true,
-    }
+    },
+    customDomain: {
+      domainName: 'wta.meet-app.link',
+      basePath: '',
+      createRoute53Record: true,
+      endpointType: 'regional',
+      certificateName: '*.wta.meet-app.link',
+      certificateArn: 'arn:aws:acm:ap-northeast-1:778615417619:certificate/9ebc7d4f-1467-4d5c-9787-7038ba9dcc88',
+    },
   },
 };
 

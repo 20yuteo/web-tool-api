@@ -1,4 +1,5 @@
 import main from '@/functions/main';
+import preflight from '@/functions/preflight';
 import type { AWS } from '@serverless/typescript';
 
 const serverlessConfiguration: AWS = {
@@ -19,7 +20,7 @@ const serverlessConfiguration: AWS = {
       },
   },
   // import the function via paths
-  functions: { main },
+  functions: {  preflight, main },
   package: { individually: true },
   custom: {
     esbuild: {

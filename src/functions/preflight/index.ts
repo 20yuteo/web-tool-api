@@ -1,11 +1,11 @@
-import { handlerPath } from '@/libs/handler-resolver';
+import { handlerPath } from "@/libs/handler-resolver";
 
 export default {
   handler: `${handlerPath(__dirname)}/handler.main`,
   events: [
     {
       http: {
-        method: 'ANY',
+        method: "OPTIONS",
         cors: {
           origins: ["https://wtc.meet-app.link", "localhost:3000"],
           headers: [
@@ -19,8 +19,8 @@ export default {
             "X-Client-Path"
           ]
         },
-        path: '/{proxy+}'
+        path: "/{proxy+}"
       }
-    }
+    },
   ],
-};
+}

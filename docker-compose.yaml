@@ -10,8 +10,8 @@ services:
       - db-store:/var/lib/postgresql/data
       - ./script:/docker-entrypoint-initdb.d
     environment:
-      - POSTGRES_USER=root
-      - POSTGRES_PASSWORD=passw0rd
-      - POSTGRES_DB=web-tool
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
 volumes:
   db-store:

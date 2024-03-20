@@ -4,6 +4,7 @@
   "description": "Serverless aws-nodejs-typescript template",
   "main": "serverless.ts",
   "scripts": {
+    "migrate": "ts-node ./db/migrate.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
@@ -20,12 +21,14 @@
     "auth0": "^4.3.1",
     "aws-lambda": "^1.0.7",
     "cors": "^2.8.5",
+    "drizzle-orm": "^0.29.4",
     "express": "^4.18.2",
     "express-json-validator-middleware": "^3.0.1",
     "json-schema": "^0.4.0",
     "jsonwebtoken": "^9.0.2",
     "jwks-rsa": "^3.1.0",
     "openai": "^4.27.0",
+    "pg": "^8.11.3",
     "serverless-api-gateway-caching": "^1.10.3",
     "serverless-domain-manager": "^7.3.3",
     "serverless-http": "^3.2.0",
@@ -36,6 +39,8 @@
     "@types/aws-lambda": "^8.10.71",
     "@types/node": "^14.14.25",
     "@types/node-fetch": "^2.6.11",
+    "@types/pg": "^8.11.2",
+    "drizzle-kit": "^0.20.14",
     "esbuild": "^0.14.11",
     "json-schema-to-ts": "^1.5.0",
     "serverless-esbuild": "^1.23.3",

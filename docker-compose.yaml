@@ -12,6 +12,6 @@ services:
     environment:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=passw0rd
-      # - POSTGRES_DB=users
+      - POSTGRES_DB=web-tool
 volumes:
   db-store:

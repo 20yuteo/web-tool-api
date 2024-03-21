@@ -1,0 +1,11 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - npm install -g serverless
+  build:
+    commands:
+      - sls deploy
+      - echo 'deploy finished!'
+      - npm run test
